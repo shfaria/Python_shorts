@@ -12,23 +12,47 @@
 # def binary(arr, find):
 #     length = len(arr)
 # global alist
-alist = []
-def binar(length, arr, find):
-    if arr[length-1] ==find:
-        alist.append({(length-1):arr[length-1]})
-        return length-1
-    elif arr[length//2]>find:
-        alist.append({(length//2):arr[length//2]})
-        arr = arr[0:(length//2)]
-        print(arr)
-    elif arr[length//2]<find:
-        alist.append({(length//2):arr[length//2]})
-        arr = arr[(length//2):-1]
-        print(arr)
+# alist = []
+# global counter
+# # counter = 0
+# def binar(length, arr, find):
+#     print(1)
+#     # counter +=1
+#     if arr[length-1] ==find:
+        
+#         return length-1
+#     elif arr[length//2]>find:
+        
+#         arr = arr[0:(length//2)]
+#         print(arr)
+#     else:
+        
+#         arr = arr[(length//2):-1]
+#         print(arr)
+#     # else:
+#     #     print("no")
 
-    return binar(length//2, arr, find)
+#     return binar(length//2, arr, find)
         
 
-dbo = binar(7, [2,4,6,7,34,233,654], 34)
+# dbo = binar(7, [2,4,6,7,34,233,654], 34)
+# print(dbo)
+# # print(alist)
+
+
+
+# actual
+def binar(l,r, arr, find):
+    mid = (l+r) // 2
+    print(mid)
+    if arr[mid] == find:
+        return mid
+    elif arr[mid]>find:    
+        return binar(l, mid-1, arr, find)
+    else:
+        return binar( mid+1,r, arr, find)
+        
+alist = [2,4,6,7,34,233,654]
+length = len(alist)
+dbo = binar(0, length-1, alist, 654)
 print(dbo)
-print(alist)
