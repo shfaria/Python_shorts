@@ -7,28 +7,25 @@ universitiesAvailabilty = pd.read_excel(alllist, sheet_name= 'apublic')
 universitiesBandwidth = pd.read_excel(alllist, sheet_name= 'bpublic')
 universitiesZoom = pd.read_excel(alllist, sheet_name= 'zpublic')
 
+avai_sheet = band_sheet = zoom_sheet = vsess_sheet = 'Sheet1'
 
-# uni_pub = pd.read_excel(alllist, sheet_name= 'zpublic')
-# uni_pub = pd.read_excel(alllist, sheet_name= 'zpublic')
-# uni_pub = pd.read_excel(alllist, sheet_name= 'zpublic')
-
-# # Availabilty
+# # # Availabilty
 # availfile = str(input("Please enter the absolute path of the Availability file: "))
-# avai_sheet = str(input("Please enter the name of the sheet of the Availability file: "))
+# # avai_sheet = str(input("Please enter the name of the sheet of the Availability file: "))
 # availabilityReport = pd.read_excel(availfile, sheet_name = avai_sheet, index_col = 0)
 # avail = pd.merge(universitiesAvailabilty, availabilityReport, how = 'outer', on = 'Name')
-# avail.to_excel("/Users/shfaria/Documents/Overall Monthly NOC report/2022/December 2022/availability-december.xlsx")
-# # # Bandwidth
+# avail.to_excel("/Users/shfaria/Documents/Overall Monthly NOC report/2023/january/availability-december.xlsx")
+# # # # Bandwidth
 # bandfile = str(input("Please enter the absolute path of the Bandwidth file: "))
-# band_sheet = str(input("Please enter the name of the sheet of the Bandwidth file: "))
+# # band_sheet = str(input("Please enter the name of the sheet of the Bandwidth file: "))
 # bandwidthReport = pd.read_excel(bandfile, sheet_name = band_sheet, index_col = 0)
 # band = pd.merge(universitiesBandwidth, bandwidthReport, how = 'outer', on = 'Name')
-# band.to_excel("/Users/shfaria/Documents/Overall Monthly NOC report/2022/December 2022/bandwidth-december.xlsx")
-# # Zoom
+# band.to_excel("/Users/shfaria/Documents/Overall Monthly NOC report/2023/january/bandwidth-december.xlsx")
+# # # Zoom
 zfile = str(input("Please enter the absolute path of the Zoom file: "))
-zoom_sheet = str(input("Please enter the name of the sheet of the Zoom file: "))
+# zoom_sheet = str(input("Please enter the name of the sheet of the Zoom file: "))
 vfile = str(input("Please enter the absolute path of the Vsession file: "))
-vsess_sheet = str(input("Please enter the name of the sheet of the Vsession file: "))
+# vsess_sheet = str(input("Please enter the name of the sheet of the Vsession file: "))
 
 zoomReport = pd.read_excel(zfile, sheet_name = zoom_sheet, index_col = 0)
 vsessReport= pd.read_excel(vfile, sheet_name = vsess_sheet, index_col = 0)
@@ -39,10 +36,10 @@ f3.to_excel("Zoom-summary.xlsx")
 zoomSummary = '/Users/shfaria/Documents/Django-projects/python projects/Zoom-summary.xlsx'
 zoomReportFinal = pd.read_excel(zoomSummary, sheet_name = 'Sheet1', index_col = 0)
 
-zoomReportFinal['TotalClasses'] = zoomReportFinal['Number of Meeting']  + zoomReportFinal['Total_Class_Taken'] 
+zoomReportFinal['TotalClasses'] = zoomReportFinal['Count of Meetings']  + zoomReportFinal['Total_Class_Taken'] 
 zoomReportFinal['TotalClasses'].head()
 
-zoomReportFinal['Totalhours'] = zoomReportFinal['Sum of Duration']  + zoomReportFinal['Total_Hours'] 
+zoomReportFinal['Totalhours'] = zoomReportFinal['Sum of Duration (hh:mm:ss)']  + zoomReportFinal['Total_Hours'] 
 zoomReportFinal['Totalhours'].head()
 
 zoomReportFinal['TotalParticipants'] = zoomReportFinal['Sum of Participants']  + zoomReportFinal['Total_Participants'] 
