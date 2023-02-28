@@ -24,3 +24,6 @@ for i in range(n-1, -1, -1):
         alist.append(matrix[j][i])
     print(alist)
     alist=[]
+
+ab = [matrix[i][j] for j in range((n//2), -1, -1) for i in range((n//2))]
+print('here ', ab)
