@@ -1,0 +1,11 @@
+
+2024-05-23 10:38:46,554 - logs - CRITICAL - exception occured -- file
+05/23/2024 10:38:46 - logs - CRITICAL - exception occured
+2024-05-23 10:38:46,554 - logs - CRITICAL - n is not  0 -- file
+05/23/2024 10:38:46 - logs - CRITICAL - n is not  0
+2024-05-23 10:40:20,241 - logs - CRITICAL - exception occured -- file
+05/23/2024 10:40:20 - logs - CRITICAL - exception occured
+2024-05-23 10:40:20,241 - logs - ERROR - n is not  0 -- file
+NoneType: None
+05/23/2024 10:40:20 - logs - ERROR - n is not  0
+NoneType: None
